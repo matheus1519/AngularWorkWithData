@@ -1,0 +1,36 @@
+<div>
+   <div>
+    <h2>Lista de Afazeres</h2>
+
+    <ul>
+        <li *ngFor="let todo of todos; index as i">
+            <p [class.checked]="todo.isChecked">
+                {{ i + 1 }} - {{ todo.name }}
+            </p>
+            <span>
+                <input type="checkbox" [(ngModel)]="todo.isChecked"/>
+                <button 
+                    [class.editing]="editing.is && editing.index === i" 
+                    (click)="onEditOrCancelItem(i)"
+                >
+                    {{ editing.is && editing.index === i ? 'Cancelar' : 'Editar' }}
+                </button>
+                <button (click)="onRemoveItem(i)">
+                    Excluir
+                </button>
+            </span>
+        </li>
+        <h4 *ngIf="!todos.length">
+            Nenhum item na lista de afazer!<br/>Adicione um abaixo v
+        </h4>
+    </ul>
+
+    <input placeholder="Adicionar Todo..." [(ngModel)]="todo" />
+    <button 
+        [disabled]="!todo" 
+        (click)="onAddNewOrExistingItem()"
+    >
+        {{ editing.is ? 'Editar' : 'Adicionar' }}
+    </button>
+   </div>
+</div>

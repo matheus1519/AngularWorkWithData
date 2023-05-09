@@ -1,0 +1,119 @@
+div {
+  height: 100vh;
+  padding: 40px 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgb(2, 0, 36);
+
+  > div {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+
+    height: fit-content;
+    padding: 16px 32px;
+
+    background-color: rgb(95, 0, 203);
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+
+    border-radius: 4px;
+    gap: 8px;
+
+    > h2 {
+      color: white;
+    }
+
+    > ul {
+      width: 100%;
+
+      display: grid;
+      align-self: flex-start;
+
+      padding: 40px 0;
+      list-style: none;
+
+      gap: 16px;
+
+      > li {
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > p {
+          &.checked {
+            text-decoration: line-through;
+          }
+        }
+
+        > span {
+          display: flex;
+          gap: 8px;
+
+          > input {
+            transform: scale(1.5);
+            margin-right: 4px;
+            cursor: pointer;
+          }
+
+          > button {
+            padding: 8px;
+            color: rgb(4, 0, 87);
+            border: 1px solid rgb(4, 0, 87);
+            background-color: rgba(255, 255, 255, 0.4);
+
+            &.editing {
+              color: rgb(56, 0, 0);
+              border: 1px solid rgb(56, 0, 0);
+              background-color: rgba(255, 141, 141, 0.5);
+            }
+          }
+        }
+      }
+
+      > h4 {
+        color: white;
+      }
+    }
+
+    > label {
+      color: white;
+    }
+
+    > input {
+      color: white;
+      width: 100%;
+      padding: 16px 32px;
+      border-radius: 4px;
+      background-color: rgba(4, 0, 87, 0.423);
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.604);
+      }
+    }
+
+    > button {
+      color: white;
+      width: 100%;
+      padding: 16px 32px;
+      background-color: rgb(4, 0, 87);
+
+      &:hover {
+        background-color: rgb(6, 0, 118);
+      }
+
+      &:active {
+        background-color: rgb(5, 0, 93);
+      }
+
+      &:disabled {
+        color: rgb(212, 212, 212);
+        background-color: rgb(110, 110, 110);
+        cursor: default;
+      }
+    }
+  }
+}
